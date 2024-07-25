@@ -14,7 +14,6 @@ class MyApp extends StatelessWidget {
       title: 'Patient Details',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-       
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
@@ -22,4 +21,3 @@ class MyApp extends StatelessWidget {
     );
   }
 }
-
