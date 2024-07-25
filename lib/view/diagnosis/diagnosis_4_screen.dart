@@ -5,13 +5,13 @@ import 'package:patient_details/view/home/widgets/drawer_widget.dart';
 import 'package:patient_details/widgets/container_widget.dart';
 
 class Diagnosis4Screen extends StatefulWidget {
-  const Diagnosis4Screen ({super.key});
+  const Diagnosis4Screen({super.key});
 
   @override
   State<Diagnosis4Screen> createState() => _Diagnosis4ScreenState();
 }
 
-class _Diagnosis4ScreenState extends State<Diagnosis4Screen >
+class _Diagnosis4ScreenState extends State<Diagnosis4Screen>
     with SingleTickerProviderStateMixin {
   late AnimationController _controller;
 
@@ -58,9 +58,9 @@ class _Diagnosis4ScreenState extends State<Diagnosis4Screen >
       ),
       body: SafeArea(
           child: SingleChildScrollView(
-            child: Padding(
-                  padding: const EdgeInsets.all(15.0),
-                  child: Column(
+        child: Padding(
+          padding: const EdgeInsets.all(15.0),
+          child: Column(
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -89,32 +89,42 @@ class _Diagnosis4ScreenState extends State<Diagnosis4Screen >
               ),
               const Text(
                 'Symptoms',
-                style: TextStyle(fontSize: 16,fontWeight: FontWeight.bold),
+                style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
               ),
               const SizedBox(
                 height: 20,
               ),
-               const SymptomsContainerWidget(text: 'Fever - 2 days', isEditable: true,),
-              kheight10,
-               const SymptomsContainerWidget(
-                text: 'Seizures - 1 days', isEditable: true,
+              const SymptomsContainerWidget(
+                text: 'Fever - 2 days',
+                isEditable: true,
               ),
               kheight10,
-               const SymptomsContainerWidget(
-                text: 'Chills - 1 days', isEditable: true,
+              const SymptomsContainerWidget(
+                text: 'Seizures - 1 days',
+                isEditable: true,
               ),
               kheight10,
-               const Divider(),
-               const Text(
-                'Diagnosis',
-                style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold,),
+              const SymptomsContainerWidget(
+                text: 'Chills - 1 days',
+                isEditable: true,
               ),
               kheight10,
-             const SymptomsContainerWidget(text: 'Pneumonia', isEditable: false,),
-              kheight10,
-              
               const Divider(),
-               kheight10,
+              const Text(
+                'Diagnosis',
+                style: TextStyle(
+                  fontSize: 16,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+              kheight10,
+              const SymptomsContainerWidget(
+                text: 'Pneumonia',
+                isEditable: false,
+              ),
+              kheight10,
+              const Divider(),
+              kheight10,
               Text(
                 'Differential Diagnosis',
                 style: TextStyle(
@@ -125,32 +135,48 @@ class _Diagnosis4ScreenState extends State<Diagnosis4Screen >
               kheight10,
               const Row(
                 children: [
-                  ContainerWidget(
-                    width: 110,
-                    text: 'pneumonia',
-                  ),
-                  kwidth10,
-                  ContainerWidget(width: 80, text: 'Malaria'),
+                  ContainerWidget(width: 100, text: 'Malaria'),
                   kwidth10,
                   ContainerWidget(
                     width: 80,
                     text: 'Typhoid',
                   ),
-                ],
-              ),
-              kheight10,
-              const Row(
-                children: [
+                  kwidth10,
                   ContainerWidget(
                     width: 120,
                     text: 'Common cold',
                   ),
-                  kwidth10,
-                  ContainerWidget(width: 100, text: 'Influneza')
                 ],
               ),
               kheight10,
-             Row(
+              const Row(
+                children: [ContainerWidget(width: 100, text: 'Influneza')],
+              ),
+              kheight10,
+              const Text(
+                'PRIVATE NOTES',
+                style: TextStyle(fontWeight: FontWeight.w500, fontSize: 24),
+              ),
+              const Divider(
+                color: Colors.black,
+              ),
+              Container(
+                height: 100,
+                width: double.infinity,
+                color: Colors.green.shade100,
+                child: const Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    kheight10,
+                    Text(
+                      '   Add your notes here.',
+                      style: TextStyle(fontSize: 18, color: kgrey),
+                    ),
+                  ],
+                ),
+              ),
+              kheight10,
+              Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   ElevatedButton(
@@ -164,7 +190,11 @@ class _Diagnosis4ScreenState extends State<Diagnosis4Screen >
                       ),
                       textStyle: const TextStyle(fontSize: 18),
                     ),
-                    child: const Text('Clear',style: TextStyle(color: kwhite,fontWeight: FontWeight.bold),),
+                    child: const Text(
+                      'Clear',
+                      style:
+                          TextStyle(color: kwhite, fontWeight: FontWeight.bold),
+                    ),
                   ),
                   ElevatedButton(
                     onPressed: () {},
@@ -177,19 +207,18 @@ class _Diagnosis4ScreenState extends State<Diagnosis4Screen >
                       ),
                       textStyle: const TextStyle(fontSize: 18),
                     ),
-                    child: const Text('Save',
+                    child: const Text(
+                      'Save',
                       style:
                           TextStyle(color: kwhite, fontWeight: FontWeight.bold),
                     ),
                   ),
                 ],
               )
-
             ],
-                  ),
-                ),
-          )),
+          ),
+        ),
+      )),
     );
   }
 }
-

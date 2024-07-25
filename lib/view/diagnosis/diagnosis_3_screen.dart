@@ -5,13 +5,13 @@ import 'package:patient_details/view/home/widgets/drawer_widget.dart';
 import 'package:patient_details/widgets/container_widget.dart';
 
 class Diagnosis3Screen extends StatefulWidget {
-  const Diagnosis3Screen ({super.key});
+  const Diagnosis3Screen({super.key});
 
   @override
   State<Diagnosis3Screen> createState() => _Diagnosis3ScreenState();
 }
 
-class _Diagnosis3ScreenState extends State<Diagnosis3Screen >
+class _Diagnosis3ScreenState extends State<Diagnosis3Screen>
     with SingleTickerProviderStateMixin {
   late AnimationController _controller;
 
@@ -58,9 +58,9 @@ class _Diagnosis3ScreenState extends State<Diagnosis3Screen >
       ),
       body: SafeArea(
           child: SingleChildScrollView(
-            child: Padding(
-                  padding: const EdgeInsets.all(15.0),
-                  child: Column(
+        child: Padding(
+          padding: const EdgeInsets.all(15.0),
+          child: Column(
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -89,24 +89,32 @@ class _Diagnosis3ScreenState extends State<Diagnosis3Screen >
               ),
               const Text(
                 'Symptoms',
-                style: TextStyle(fontSize: 16,fontWeight: FontWeight.bold),
+                style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
               ),
               const SizedBox(
                 height: 20,
               ),
-               SymptomsContainerWidget(text: 'Fever - 2 days', isEditable: true,),
-              kheight10,
-               SymptomsContainerWidget(
-                text: 'Seizures - 1 days', isEditable: true,
+              const SymptomsContainerWidget(
+                text: 'Fever - 2 days',
+                isEditable: true,
               ),
               kheight10,
-               SymptomsContainerWidget(
-                text: 'Chills - 1 days', isEditable: true,
+              const SymptomsContainerWidget(
+                text: 'Seizures - 1 days',
+                isEditable: true,
               ),
               kheight10,
-               Text(
+              const SymptomsContainerWidget(
+                text: 'Chills - 1 days',
+                isEditable: true,
+              ),
+              kheight10,
+              Text(
                 'Assosiated Symptoms',
-                style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold,color: Colors.green.shade300),
+                style: TextStyle(
+                    fontSize: 16,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.green.shade300),
               ),
               kheight10,
               const Row(
@@ -136,9 +144,8 @@ class _Diagnosis3ScreenState extends State<Diagnosis3Screen >
                 ],
               ),
               kheight10,
-              
               const Divider(),
-               kheight10,
+              kheight10,
               Text(
                 'Differential Diagnosis',
                 style: TextStyle(
@@ -174,7 +181,7 @@ class _Diagnosis3ScreenState extends State<Diagnosis3Screen >
                 ],
               ),
               kheight10,
-             Row(
+              Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   ElevatedButton(
@@ -188,7 +195,11 @@ class _Diagnosis3ScreenState extends State<Diagnosis3Screen >
                       ),
                       textStyle: const TextStyle(fontSize: 18),
                     ),
-                    child: const Text('Clear',style: TextStyle(color: kwhite,fontWeight: FontWeight.bold),),
+                    child: const Text(
+                      'Clear',
+                      style:
+                          TextStyle(color: kwhite, fontWeight: FontWeight.bold),
+                    ),
                   ),
                   ElevatedButton(
                     onPressed: () {},
@@ -201,19 +212,18 @@ class _Diagnosis3ScreenState extends State<Diagnosis3Screen >
                       ),
                       textStyle: const TextStyle(fontSize: 18),
                     ),
-                    child: const Text('Save',
+                    child: const Text(
+                      'Save',
                       style:
                           TextStyle(color: kwhite, fontWeight: FontWeight.bold),
                     ),
                   ),
                 ],
               )
-
             ],
-                  ),
-                ),
-          )),
+          ),
+        ),
+      )),
     );
   }
 }
-

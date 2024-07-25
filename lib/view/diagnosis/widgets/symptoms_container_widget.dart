@@ -5,7 +5,9 @@ class SymptomsContainerWidget extends StatelessWidget {
   final String text;
   final bool isEditable;
   const SymptomsContainerWidget({
-    super.key, required this.text,required this.isEditable,
+    super.key,
+    required this.text,
+    required this.isEditable,
   });
 
   @override
@@ -17,12 +19,14 @@ class SymptomsContainerWidget extends StatelessWidget {
           borderRadius: BorderRadius.circular(10)),
       child: Row(children: [
         kwidth10,
-         Text(
+        Text(
           text,
           style: const TextStyle(fontSize: 18),
         ),
         const Spacer(),
-        isEditable==true?IconButton(onPressed: () {}, icon: const Icon(Icons.edit)):const SizedBox(),
+        isEditable == true
+            ? IconButton(onPressed: () {}, icon: const Icon(Icons.edit))
+            : const SizedBox(),
         IconButton(onPressed: () {}, icon: const Icon(Icons.close))
       ]),
     );
