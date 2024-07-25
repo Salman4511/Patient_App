@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:patient_details/utils/constants.dart';
+import 'package:patient_details/view/diagnosis/diagnosis_4_screen.dart';
 import 'package:patient_details/view/diagnosis/widgets/symptoms_container_widget.dart';
-import 'package:patient_details/view/home/widgets/drawer_widget.dart';
 import 'package:patient_details/widgets/container_widget.dart';
 
 class Diagnosis3Screen extends StatefulWidget {
@@ -43,11 +43,7 @@ class _Diagnosis3ScreenState extends State<Diagnosis3Screen>
               size: 30,
             ),
             onPressed: () {
-              Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => const DrawerWidget(),
-                  ));
+              Scaffold.of(context).openEndDrawer();
             },
           ),
           const SizedBox(
@@ -154,16 +150,25 @@ class _Diagnosis3ScreenState extends State<Diagnosis3Screen>
                     color: Colors.green.shade300),
               ),
               kheight10,
-              const Row(
+               Row(
                 children: [
-                  ContainerWidget(
-                    width: 110,
-                    text: 'pneumonia',
+                  InkWell(
+                    onTap: (){
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const Diagnosis4Screen()),
+                      );
+                    },
+                    child: const ContainerWidget(
+                      width: 110,
+                      text: 'pneumonia',
+                    ),
                   ),
                   kwidth10,
-                  ContainerWidget(width: 80, text: 'Malaria'),
+                  const ContainerWidget(width: 80, text: 'Malaria'),
                   kwidth10,
-                  ContainerWidget(
+                  const ContainerWidget(
                     width: 80,
                     text: 'Typhoid',
                   ),

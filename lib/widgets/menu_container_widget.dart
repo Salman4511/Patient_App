@@ -1,29 +1,34 @@
 import 'package:flutter/material.dart';
 
-class MenuContainerWidget extends StatelessWidget {
-  final String text;
-  final void Function() onPressed;
-  const MenuContainerWidget({
+class MenuContanierWidget extends StatelessWidget {
+  const MenuContanierWidget({
     super.key,
-    required this.text,
-    required this.onPressed,
   });
 
   @override
   Widget build(BuildContext context) {
-    return InkWell(
-      onTap: onPressed,
-      child: Container(
-        height: 60,
-        width: double.infinity,
-        decoration: BoxDecoration(
-            color: Colors.grey, borderRadius: BorderRadius.circular(10)),
-        child: Center(
-          child: Text(
-            text,
-            style: const TextStyle(fontSize: 20),
+    return Container(
+      width: 80,
+      height: 80,
+      decoration: BoxDecoration(
+        color: Colors.grey.shade400,
+        borderRadius: BorderRadius.circular(15),
+      ),
+      child: const Column(
+        // mainAxisAlignment: MainAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(
+            '  SpO2',
           ),
-        ),
+          Center(
+              child: Icon(
+            Icons.water_drop,
+            size: 35,
+            color: Colors.green,
+          )),
+          Center(child: Text('91'))
+        ],
       ),
     );
   }

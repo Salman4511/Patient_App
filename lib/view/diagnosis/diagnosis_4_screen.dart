@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:patient_details/utils/constants.dart';
 import 'package:patient_details/view/diagnosis/widgets/symptoms_container_widget.dart';
-import 'package:patient_details/view/home/widgets/drawer_widget.dart';
 import 'package:patient_details/widgets/container_widget.dart';
 
 class Diagnosis4Screen extends StatefulWidget {
@@ -43,11 +42,7 @@ class _Diagnosis4ScreenState extends State<Diagnosis4Screen>
               size: 30,
             ),
             onPressed: () {
-              Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => const DrawerWidget(),
-                  ));
+             Scaffold.of(context).openEndDrawer();
             },
           ),
           const SizedBox(
@@ -164,15 +159,12 @@ class _Diagnosis4ScreenState extends State<Diagnosis4Screen>
                 height: 100,
                 width: double.infinity,
                 color: Colors.green.shade100,
-                child: const Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    kheight10,
-                    Text(
-                      '   Add your notes here.',
-                      style: TextStyle(fontSize: 18, color: kgrey),
-                    ),
-                  ],
+               
+                child: TextFormField(
+                  maxLines: 10,
+                  decoration: InputDecoration(
+                    hintText: '  Add your notes here.',
+                  ),
                 ),
               ),
               kheight10,

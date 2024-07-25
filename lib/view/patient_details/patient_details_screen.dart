@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:patient_details/utils/constants.dart';
+import 'package:patient_details/view/home/home.dart';
 import 'package:patient_details/view/patient_details/widgets/details_textform_widget.dart';
 import 'package:intl/intl.dart';
 
@@ -22,6 +23,8 @@ class _PatientDetailsScreenState extends State<PatientDetailsScreen> {
   final _rbsController = TextEditingController();
 
   bool _isFormValid = false;
+
+  final List<String> _genderItems = ['Male', 'Female', 'Other'];
 
   @override
   void initState() {
@@ -181,7 +184,34 @@ class _PatientDetailsScreenState extends State<PatientDetailsScreen> {
                   DetailsTextFormWidget(
                     text: 'Gender',
                     suffixIcon: IconButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          showModalBottomSheet(
+                            context: context,
+                            builder: (BuildContext context) {
+                              return ListView.builder(
+                                itemCount: _genderItems.length,
+                                itemBuilder: (BuildContext context, int index) {
+                                  return Container(
+                                    decoration: BoxDecoration(
+                                      border: Border.all(color: Colors.grey),
+                                    ),
+                                    child: ListTile(
+                                      style: ListTileStyle.drawer,
+                                      title: Text(_genderItems[index]),
+                                      onTap: () {
+                                        setState(() {
+                                          _genderController.text =
+                                              _genderItems[index];
+                                          Navigator.pop(context);
+                                        });
+                                      },
+                                    ),
+                                  );
+                                },
+                              );
+                            },
+                          );
+                        },
                         icon: const Icon(Icons.keyboard_arrow_down)),
                     controller: _genderController,
                     validator: (value) {
@@ -297,7 +327,11 @@ class _PatientDetailsScreenState extends State<PatientDetailsScreen> {
                     child: InkWell(
                       onTap: () {
                         if (_formKey.currentState!.validate()) {
-                          // Proceed to next step
+                         Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => const HomeScreen()),
+                          );
                         }
                       },
                       child: Container(

@@ -6,6 +6,7 @@ class DetailsTextFormWidget extends StatelessWidget {
   final TextEditingController controller;
   final String? Function(String?) validator;
   final TextInputType? keyboardType;
+
   const DetailsTextFormWidget({
     super.key,
     required this.text,

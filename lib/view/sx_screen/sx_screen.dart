@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:patient_details/utils/constants.dart';
+import 'package:patient_details/view/diagnosis/diagnosis_3_screen.dart';
 
 class SxScreen extends StatefulWidget {
   const SxScreen({super.key});
@@ -27,7 +28,13 @@ class _SxScreenState extends State<SxScreen> {
                   style: ButtonStyle(
                       backgroundColor:
                           MaterialStatePropertyAll(Colors.green.shade200)),
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const Diagnosis3Screen()),
+                    );
+                  },
                   child: const Text(
                     'Save',
                     style: TextStyle(color: kwhite, fontSize: 16),

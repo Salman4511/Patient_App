@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:patient_details/utils/constants.dart';
 import 'package:patient_details/view/home/widgets/drawer_widget.dart';
+import 'package:patient_details/view/sx_screen/sx_screen.dart';
 import 'package:patient_details/widgets/container_widget.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -36,18 +37,18 @@ class _HomeScreenState extends State<HomeScreen>
         ),
         leading: const Icon(Icons.arrow_back),
         actions: [
-          IconButton(
-            icon: const Icon(
-              Icons.menu,
-              size: 30,
-            ),
-            onPressed: () {
-              Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => const DrawerWidget(),
-                  ));
-            },
+          Builder(
+            builder: (context) {
+              return IconButton(
+                icon: const Icon(
+                  Icons.menu,
+                  size: 30,
+                ),
+                onPressed: () {
+                  Scaffold.of(context).openEndDrawer();
+                },
+              );
+            }
           ),
           const SizedBox(
             width: 10,
@@ -70,6 +71,12 @@ class _HomeScreenState extends State<HomeScreen>
               color: Colors.black,
             ),
             TextField(
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const SxScreen()),
+                );
+              },
               decoration: InputDecoration(
                 fillColor: Colors.grey.shade100,
                 filled: true,
@@ -126,6 +133,7 @@ class _HomeScreenState extends State<HomeScreen>
           ],
         ),
       )),
+      endDrawer: const DrawerWidget(),
     );
   }
 }
