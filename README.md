@@ -75,6 +75,9 @@ This app follows the MVC architecture to separate the concerns of the applicatio
 <img src="https://github.com/user-attachments/assets/cb8a0f02-b02d-493f-8679-58f658098b51" alt="" width="300px">
 <img src="https://github.com/user-attachments/assets/ca101ec8-b8eb-40aa-8501-69ce4610869c" alt="" width="300px">
 <img src="https://github.com/user-attachments/assets/4578bd49-5c78-4b10-b97e-6556dea9b810" alt="" width="300px">
+<img src="https://github.com/user-attachments/assets/c1603f0e-4da0-429b-9a40-899f1bcaad34" alt="" width="300px">
+<img src="https://github.com/user-attachments/assets/1cbe3249-b603-4ba3-910e-10c14814fa60" alt="" width="300px">
+<img src="https://github.com/user-attachments/assets/c7081297-650c-45df-8a8d-5e8e3613936b" alt="" width="300px">
 
 
 ## Contact
