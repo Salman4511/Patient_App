@@ -150,10 +150,10 @@ class _Diagnosis3ScreenState extends State<Diagnosis3Screen>
                     color: Colors.green.shade300),
               ),
               kheight10,
-               Row(
+              Row(
                 children: [
                   InkWell(
-                    onTap: (){
+                    onTap: () {
                       Navigator.push(
                         context,
                         MaterialPageRoute(

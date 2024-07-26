@@ -26,6 +26,28 @@ class _Diagnosis4ScreenState extends State<Diagnosis4Screen>
     super.dispose();
   }
 
+  void _showPopupMessage(BuildContext context) {
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          backgroundColor: Colors.grey.shade800,
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(8),
+          ),
+          content: const Text(
+            'Sx & Dx have been saved successfully.',
+            style: TextStyle(color: Colors.white),
+          ),
+        );
+      },
+    );
+
+    Future.delayed(const Duration(seconds: 2), () {
+      Navigator.of(context).pop(true);
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -42,7 +64,7 @@ class _Diagnosis4ScreenState extends State<Diagnosis4Screen>
               size: 30,
             ),
             onPressed: () {
-             Scaffold.of(context).openEndDrawer();
+              Scaffold.of(context).openEndDrawer();
             },
           ),
           const SizedBox(
@@ -159,10 +181,9 @@ class _Diagnosis4ScreenState extends State<Diagnosis4Screen>
                 height: 100,
                 width: double.infinity,
                 color: Colors.green.shade100,
-               
                 child: TextFormField(
                   maxLines: 10,
-                  decoration: InputDecoration(
+                  decoration: const InputDecoration(
                     hintText: '  Add your notes here.',
                   ),
                 ),
@@ -189,7 +210,9 @@ class _Diagnosis4ScreenState extends State<Diagnosis4Screen>
                     ),
                   ),
                   ElevatedButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      _showPopupMessage(context);
+                    },
                     style: ElevatedButton.styleFrom(
                       backgroundColor: Colors.green.shade300,
                       padding: const EdgeInsets.symmetric(

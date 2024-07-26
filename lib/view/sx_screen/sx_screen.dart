@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:patient_details/utils/constants.dart';
 import 'package:patient_details/view/diagnosis/diagnosis_3_screen.dart';
+import 'package:patient_details/widgets/bottom_sheet_widget.dart';
 
 class SxScreen extends StatefulWidget {
   const SxScreen({super.key});
@@ -49,9 +50,15 @@ class _SxScreenState extends State<SxScreen> {
               hintStyle: const TextStyle(fontSize: 14),
               border: const OutlineInputBorder(),
               prefixIcon: IconButton(
-                icon: const Icon(Icons.search),
-                onPressed: () {},
-              ),
+                  icon: const Icon(Icons.search),
+                  onPressed: () {
+                    showModalBottomSheet(
+                        context: context,
+                        isScrollControlled: true,
+                        builder: (BuildContext context) {
+                          return BottomSheetContent();
+                        });
+                  }),
             ),
           ),
           const SizedBox(
